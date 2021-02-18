@@ -1,0 +1,29 @@
+
+{% load static %}
+
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Reset Status Task</title>
+    <link rel="stylesheet"  href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet"  href="{% static 'fonts/ionicons.min.css' %}">
+    <link rel="stylesheet"  href="{% static '/css/Login-Form-Clean.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/Pretty-Registration-Form.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/styles.css' %}">
+    </head>
+
+<nav class="navbar navbar-light navbar-expand-md shadow-sm" style="background-color: #f7f7f7;">
+    <div class="container-fluid"><a class="navbar-brand" href="/"><strong>Brand</strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div
+            class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{% url 'index' %}">Login</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="{% url 'register' %}">Register</a></li>
+            </ul>
+    </div>
+    </div> 
+</nav>
+{% block content %}
+{% endblock %}
+</html>

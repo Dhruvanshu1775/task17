@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Reset Status Task</title>
+    <link rel="stylesheet"  href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet"  href="{% static 'fonts/ionicons.min.css' %}">
+    <link rel="stylesheet"  href="{% static '/css/Login-Form-Clean.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/Pretty-Registration-Form.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md shadow-sm" style="background-color: #f7f7f7;">
+        <div class="container-fluid"><a class="navbar-brand" href="#"><strong>Admin</strong> <strong><em>Dashboard</em></strong></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-lg-end align-items-lg-end" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <a class="" href="/">
+                    <li class="nav-item" role="presentation"></li>
+                </ul><button class="btn btn-primary" type="button">Logout</button></div>
+            </a>
+        </div>
+    </nav>
+    <div class="card shadow" style="margin: 20px;margin-bottom: 20px;margin-top: 20px;">
+        <div class="card-header py-3">
+            <h3>Registered <em>Users</em></h3>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <table class="table dataTable my-0" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Current Status</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        {% for stu in obj1 %}
+                        <tr>
+                            
+                            <td>{{ stu.first_name }}</td>
+                            <td>{{ stu.last_name }}</td>
+                            <td>{{ stu.status_choices }}</td>
+                            <td>{{ stu.id }}</td>
+                            <td>{{ stu.password2 }}</td>
+                            
+                        </tr>
+                        {% endfor %}
+                        
+                    </tbody>
+                    
+                    <tfoot>
+                        <tr></tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-md-6 align-self-center">
+                    <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 12</p>
+                </div>
+                <div class="col-md-6">
+                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
